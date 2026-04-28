@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConGracia — Directorio de Talento Hispanohablante</title>
+<meta name="description" content="Descubre talento emergente hispanohablante en música, influencers, modelos, arte visual y entretenimiento. La agencia de referencia en España y Latinoamérica.">
+<meta property="og:title" content="ConGracia — Directorio de Talento Hispanohablante">
+<meta property="og:description" content="Descubre talento emergente hispanohablante en música, influencers, modelos, arte visual y entretenimiento.">
+<meta property="og:image" content="https://tjkxopwxgywszhfpgvsk.supabase.co/storage/v1/object/public/artistas/FotoVic33%20CG3.jpg">
+<meta property="og:url" content="https://congracia.pro">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ConGracia — Directorio de Talento Hispanohablante">
+<meta name="twitter:description" content="Descubre talento emergente hispanohablante en música, influencers, modelos, arte visual y entretenimiento.">
+<meta name="twitter:image" content="https://tjkxopwxgywszhfpgvsk.supabase.co/storage/v1/object/public/artistas/FotoVic33%20CG3.jpg">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const _surl = 'https://tjkxopwxgywszhfpgvsk.supabase.co';
+const _skey = 'sb_publishable_6zOTfBbPPy8ase0OGh7fXQ_mDJ8WJlv';
+const sb = supabase.createClient(_surl, _skey);
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #0F6E56;
+  --verde-claro: #E1F5EE;
+  --verde-medio: #1D9E75;
+  --negro: #1A1A18;
+  --gris: #888780;
+  --gris-claro: #D3D1C7;
+  --fondo: #F7F5F0;
+  --blanco: #ffffff;
+  --borde: rgba(0,0,0,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--fondo); color:var(--negro); }
+
+/* NAV */
+nav {
+  background:var(--negro);
+  padding:0 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:500;
+}
+.logo { font-family:'Playfair Display',serif; font-size:22px; color:var(--blanco); letter-spacing:-0.02em; cursor:pointer; flex-shrink:0; }
+.logo span { color:var(--verde-medio); }
+.nav-links { display:flex; gap:20px; align-items:center; }
+.nav-link { font-size:13px; color:var(--gris); cursor:pointer; transition:color 0.2s; background:none; border:none; font-family:'DM Sans',sans-serif; }
+.nav-link:hover { color:var(--blanco); }
+.nav-cta { background:var(--verde); color:var(--blanco); border:none; padding:8px 18px; border-radius:6px; font-size:13px; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500; transition:background 0.2s; }
+.nav-cta:hover { background:var(--verde-medio); }
+@media(max-width:500px) {
+  nav { padding:0 1rem; }
+  .nav-link-inicio { display:none; }
+  .nav-links { gap:12px; }
+  .logo { font-size:19px; }
+}
+
+/* PAGES */
+.page { display:none; padding-top:64px; min-height:100vh; }
+.page.active { display:block; }
+
+/* ==================== LANDING ==================== */
+#page-landing { background:var(--negro); padding-top:0; }
+
+.hero-full {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:4rem 2.5rem 3.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, #0a2e24 0%, #1A1A18 50%, #0d1a16 100%);
+}
+.hero-pattern {
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(29,158,117,0.12) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(15,110,86,0.08) 0%, transparent 50%);
+}
+.hero-badge {
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--verde-medio);
+  border:1px solid rgba(29,158,117,0.3);
+  padding:6px 14px;
+  border-radius:20px;
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,7vw,88px);
+  color:var(--blanco);
+  font-weight:400;
+  line-height:1.0;
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.hero-title em { color:var(--verde-medio); font-style:italic; }
+.hero-desc {
+  font-size:16px;
+  color:var(--gris);
+  max-width:480px;
+  line-height:1.7;
+  margin-bottom:2.5rem;
+  position:relative;
+}
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; position:relative; }
+.btn-primary {
+  background:var(--verde);
+  color:var(--blanco);
+  border:none;
+  padding:14px 28px;
+  border-radius:6px;
+  font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  font-weight:500;
+  transition:background 0.2s;
+}
+.btn-primary:hover { background:var(--verde-medio); }
+.btn-secondary {
+  background:transparent;
+  color:var(--blanco);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:14px 28px;
+  border-radius:6px;
+  font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  transition:border-color 0.2s;
+}
+.btn-secondary:hover { border-color:rgba(255,255,255,0.5); }
+
+.hero-stats {
+  display:flex;
+  gap:3rem;
+  padding-top:3rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+  margin-top:3rem;
+  position:relative;
+}
+.hero-stat-num { font-family:'Playfair Display',serif; font-size:32px; color:var(--blanco); display:block; }
+.hero-stat-label { font-size:11px; color:var(--gris); text-transform:uppercase; letter-spacing:0.1em; }
+
+/* HOW IT WORKS */
+.section { padding:5rem 2.5rem; }
+.section-dark { background:var(--negro); }
+.section-light { background:var(--fondo); }
+.section-white { background:var(--blanco); }
+.section-label { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--verde-medio); margin-bottom:1rem; display:block; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); font-weight:400; line-height:1.15; margin-bottom:1rem; }
+.section-title-white { color:var(--blanco); }
+.section-sub { font-size:15px; color:var(--gris); line-height:1.7; max-width:520px; margin-bottom:3rem; }
+
+.how-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; }
+.how-card { }
+.how-num { font-family:'Playfair Display',serif; font-size:48px; color:rgba(29,158,117,0.2); font-weight:400; margin-bottom:0.75rem; }
+.how-title { font-size:15px; font-weight:500; color:var(--blanco); margin-bottom:0.5rem; }
+.how-desc { font-size:13px; color:var(--gris); line-height:1.6; }
+
+/* CATEGORIES */
+.cat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+@media(max-width:500px) { .cat-grid { grid-template-columns:1fr 1fr; } }
+.cat-card {
+  background:var(--blanco);
+  border:1px solid var(--borde);
+  border-radius:10px;
+  padding:1.5rem 1.25rem;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.cat-card:hover { border-color:var(--verde); transform:translateY(-2px); }
+.cat-icon { font-size:28px; margin-bottom:0.75rem; }
+.cat-name { font-size:14px; font-weight:500; color:var(--negro); margin-bottom:4px; }
+.cat-count { font-size:12px; color:var(--gris); }
+
+/* ==================== DIRECTORIO ==================== */
+#page-directorio { background:var(--fondo); }
+
+.dir-hero {
+  background:var(--negro);
+  padding:2.5rem 2.5rem 2rem;
+}
+.dir-hero h1 { font-family:'Playfair Display',serif; font-size:32px; color:var(--blanco); font-weight:400; margin-bottom:6px; }
+.dir-hero h1 em { color:var(--verde-medio); font-style:italic; }
+.dir-hero p { color:var(--gris); font-size:13px; }
+.dir-stats { display:flex; gap:2rem; margin-top:1.5rem; }
+.dir-stat-num { font-family:'Playfair Display',serif; font-size:24px; color:var(--blanco); display:block; }
+.dir-stat-label { font-size:10px; color:var(--gris); text-transform:uppercase; letter-spacing:0.08em; }
+
+.toolbar {
+  padding:1rem 2.5rem;
+  background:var(--blanco);
+  border-bottom:1px solid var(--borde);
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.filter-btn {
+  padding:6px 16px;
+  border-radius:20px;
+  border:1px solid var(--borde);
+  background:transparent;
+  font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  color:var(--gris);
+  transition:all 0.15s;
+}
+.filter-btn:hover { border-color:var(--verde); color:var(--verde); }
+.filter-btn.active { background:var(--verde); color:var(--blanco); border-color:var(--verde); }
+.toolbar-right { margin-left:auto; display:flex; gap:8px; align-items:center; }
+.search-input {
+  padding:6px 14px;
+  border:1px solid var(--borde);
+  border-radius:6px;
+  font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  background:var(--fondo);
+  color:var(--negro);
+  outline:none;
+  width:200px;
+}
+.search-input:focus { border-color:var(--verde); }
+.view-btn {
+  padding:6px 10px;
+  border:1px solid var(--borde);
+  border-radius:6px;
+  background:transparent;
+  cursor:pointer;
+  font-size:14px;
+  color:var(--gris);
+  transition:all 0.15s;
+  font-family:'DM Sans',sans-serif;
+}
+.view-btn.active { background:var(--negro); color:var(--blanco); border-color:var(--negro); }
+.admin-only { display: none !important; }
+.admin-mode .admin-only { display: inline-block !important; }
+
+.platform-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; padding-top:10px; border-top:1px solid var(--borde); }
+.platform-badge { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--gris); background:var(--fondo); border:1px solid var(--borde); border-radius:20px; padding:3px 10px; }
+.platform-badge span { font-size:13px; }
+.checkbox-row { display:flex; align-items:center; gap:8px; margin-top:6px; font-size:12px; color:var(--gris); }
+.checkbox-row input { width:14px; height:14px; cursor:pointer; }
+.upload-label {
+  display:flex; align-items:center; justify-content:center; gap:6px;
+  width:100%; padding:8px 12px; margin-top:4px;
+  border:1px dashed var(--gris-claro); border-radius:6px;
+  background:transparent; cursor:pointer;
+  font-size:12px; color:var(--gris); font-family:'DM Sans',sans-serif;
+  transition:all 0.15s;
+}
+.upload-label:hover { border-color:var(--verde); color:var(--verde); }
+.upload-status { font-size:11px; color:var(--verde); margin-top:4px; min-height:14px; }
+
+.btn-add-sm {
+  background:var(--verde);
+  color:var(--blanco);
+  border:none;
+  padding:6px 16px;
+  border-radius:6px;
+  font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  font-weight:500;
+}
+
+/* GRID VIEW */
+.grid-view { padding:1.5rem 2.5rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; }
+.grid-view.hidden { display:none; }
+
+/* LIST VIEW */
+.list-view { padding:1.5rem 2.5rem; display:flex; flex-direction:column; gap:10px; }
+.list-view.hidden { display:none; }
+.list-row {
+  background:var(--blanco);
+  border:1px solid var(--borde);
+  border-radius:10px;
+  padding:1rem 1.25rem;
+  display:grid;
+  grid-template-columns:44px 1fr 120px 100px 100px 80px 100px;
+  align-items:center;
+  gap:16px;
+  cursor:pointer;
+  transition:border-color 0.15s;
+}
+.list-row:hover { border-color:var(--verde-medio); }
+.list-row.header { background:var(--fondo); cursor:default; border-color:transparent; }
+.list-row.header:hover { border-color:transparent; }
+.list-avatar {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--verde-claro);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:500; color:var(--verde);
+  flex-shrink:0;
+}
+.list-name { font-size:14px; font-weight:500; color:var(--negro); }
+.list-country { font-size:12px; color:var(--gris); }
+.list-cell { font-size:13px; color:var(--negro); }
+.list-header-cell { font-size:10px; color:var(--gris); text-transform:uppercase; letter-spacing:0.08em; }
+
+/* CARD */
+.card {
+  background:var(--blanco);
+  border-radius:12px;
+  border:1px solid var(--borde);
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform 0.2s, box-shadow 0.2s;
+  animation:fadeIn 0.35s ease both;
+}
+.card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.08); }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+.card-avatar {
+  width:100%; height:170px;
+  background:var(--verde-claro);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:52px; color:var(--verde);
+  font-style:italic;
+}
+.card-body { padding:1.1rem 1.25rem; }
+.card-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:4px; }
+.card-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:500; color:var(--negro); }
+.card-badge { font-size:10px; padding:3px 9px; border-radius:20px; font-weight:500; white-space:nowrap; }
+.badge-Música { background:#E1F5EE; color:#0F6E56; }
+.badge-Influencer { background:#EEEDFE; color:#534AB7; }
+.badge-Modelo { background:#FBEAF0; color:#993556; }
+.badge-Arte\ Visual { background:#EAF3DE; color:#3B6D11; }
+.badge-Entretenimiento { background:#E6F1FB; color:#185FA5; }
+.card-country { font-size:12px; color:var(--gris); margin-bottom:10px; }
+.status-dot { width:6px; height:6px; border-radius:50%; background:var(--verde-medio); display:inline-block; margin-right:5px; }
+.card-bio { font-size:12px; color:#5a5a58; line-height:1.55; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.card-stats { display:flex; gap:16px; padding-top:10px; border-top:1px solid var(--borde); }
+.card-stat-num { font-size:13px; font-weight:500; color:var(--negro); display:block; }
+.card-stat-label { font-size:10px; color:var(--gris); text-transform:uppercase; letter-spacing:0.05em; }
+
+/* ==================== PERFIL MODAL ==================== */
+.overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:600;
+  align-items:center; justify-content:center;
+  padding:1.5rem;
+}
+@media(max-width:600px) {
+  .overlay { padding:0; align-items:flex-end; }
+  .profile-modal { border-radius:16px 16px 0 0; max-height:95vh; width:100%; }
+  .profile-avatar-lg { border-radius:16px 16px 0 0; height:220px; }
+}
+.overlay.open { display:flex; }
+.profile-modal {
+  background:var(--blanco);
+  border-radius:16px;
+  width:100%; max-width:640px;
+  max-height:90vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.profile-header {
+  background:var(--negro);
+  padding:0;
+  position:relative;
+}
+.profile-close {
+  position:absolute; top:1.25rem; right:1.25rem;
+  background:rgba(255,255,255,0.1);
+  border:none; color:var(--blanco);
+  width:32px; height:32px;
+  border-radius:50%; cursor:pointer; font-size:16px;
+  display:flex; align-items:center; justify-content:center;
+}
+.profile-avatar-lg {
+  width:100%; height:300px; border-radius:0;
+  background:var(--negro);
+  display:flex; align-items:flex-end; justify-content:flex-start;
+  font-family:'Playfair Display',serif;
+  font-size:64px; color:var(--verde-claro);
+  font-style:italic;
+  background-size:cover; background-position:center center;
+  position:relative;
+}
+.profile-avatar-lg::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 40%, rgba(26,26,24,0.85) 100%);
+}
+@media(max-width:600px) {
+  .profile-avatar-lg { height:260px; background-position:center center; }
+  .profile-modal { border-radius:12px; }
+}
+.profile-name { font-family:'Playfair Display',serif; font-size:28px; color:var(--blanco); font-weight:400; margin-bottom:6px; }
+.profile-meta { display:flex; gap:10px; align-items:center; }
+.profile-body { padding:2rem; }
+.profile-section-title { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gris); margin-bottom:1rem; margin-top:1.5rem; }
+.profile-bio { font-size:14px; color:#4a4a48; line-height:1.7; }
+.profile-stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+@media(max-width:400px) { .profile-stats-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px) {
+  .artista-gallery-grid.n3,
+  .artista-gallery-grid.n4,
+  .artista-gallery-grid.n5,
+  .artista-gallery-grid.n6 { grid-template-columns:1fr 1fr !important; grid-template-rows:auto !important; }
+  .artista-gallery-grid.n3 .gal-item:first-child,
+  .artista-gallery-grid.n5 .gal-item:first-child { grid-row:auto !important; }
+  #artista-content-grid { grid-template-columns:1fr !important; }
+  #artista-hero { height:360px !important; }
+  #artista-nombre { font-size:32px !important; }
+  .fotos-upload-grid { grid-template-columns:repeat(2,1fr) !important; }
+}
+
+/* GALERÍA ARTISTA */
+.artista-gallery-grid {
+  display:grid;
+  gap:8px;
+  margin-bottom:2.5rem;
+}
+.artista-gallery-grid.n1 { grid-template-columns:1fr; }
+.artista-gallery-grid.n2 { grid-template-columns:1fr 1fr; }
+.artista-gallery-grid.n3 { grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; }
+.artista-gallery-grid.n3 .gal-item:first-child { grid-row:1/3; }
+.artista-gallery-grid.n4 { grid-template-columns:1fr 1fr; grid-template-rows:auto auto; }
+.artista-gallery-grid.n5 { grid-template-columns:2fr 1fr 1fr; grid-template-rows:1fr 1fr; }
+.artista-gallery-grid.n5 .gal-item:first-child { grid-row:1/3; }
+.artista-gallery-grid.n6 { grid-template-columns:1fr 1fr 1fr; }
+.gal-item {
+  overflow:hidden;
+  border-radius:10px;
+  background:var(--verde-claro);
+  cursor:pointer;
+  position:relative;
+}
+.gal-item img {
+  width:100%;
+  height:100%;
+  min-height:160px;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.35s ease;
+}
+.gal-item:hover img { transform:scale(1.04); }
+/* Lightbox */
+#lightbox {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+#lightbox.open { display:flex; }
+#lightbox img {
+  max-width:100%;
+  max-height:90vh;
+  border-radius:8px;
+  object-fit:contain;
+}
+#lightbox-close {
+  position:absolute;
+  top:1.5rem;
+  right:1.5rem;
+  background:rgba(255,255,255,0.15);
+  border:none;
+  color:white;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#lightbox-prev, #lightbox-next {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.15);
+  border:none;
+  color:white;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#lightbox-prev { left:1.5rem; }
+#lightbox-next { right:1.5rem; }
+/* Upload fotos dinámicas en formulario */
+.fotos-upload-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:8px;
+}
+.foto-upload-slot {
+  position:relative;
+  aspect-ratio:4/3;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px dashed var(--gris-claro);
+  background:var(--fondo);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  font-size:12px;
+  color:var(--gris);
+  transition:border-color 0.15s;
+}
+.foto-upload-slot:hover { border-color:var(--verde); color:var(--verde); }
+.foto-upload-slot.has-foto { border:none; }
+.foto-upload-slot img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.foto-upload-slot .slot-remove {
+  position:absolute;
+  top:4px;
+  right:4px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  border:none;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+.foto-slot-add {
+  aspect-ratio:4/3;
+  border-radius:8px;
+  border:1px dashed var(--gris-claro);
+  background:var(--fondo);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  font-size:12px;
+  color:var(--gris);
+  transition:border-color 0.15s;
+}
+.foto-slot-add:hover { border-color:var(--verde); color:var(--verde); }
+.profile-stat-card { background:var(--fondo); border-radius:8px; padding:0.75rem; text-align:center; min-width:0; overflow:hidden; }
+.profile-stat-num { font-family:'Playfair Display',serif; font-size:13px; color:var(--negro); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.profile-stat-label { font-size:10px; color:var(--gris); text-transform:uppercase; letter-spacing:0.08em; }
+.profile-links { display:flex; gap:8px; flex-wrap:wrap; }
+.profile-link {
+  font-size:13px; padding:8px 16px;
+  border:1px solid var(--borde); border-radius:6px;
+  color:var(--negro); text-decoration:none;
+  transition:all 0.15s;
+}
+.profile-link:hover { border-color:var(--verde); color:var(--verde); }
+.profile-contact-btn {
+  width:100%; background:var(--verde); color:var(--blanco);
+  border:none; padding:14px; border-radius:8px;
+  font-size:14px; font-family:'DM Sans',sans-serif;
+  cursor:pointer; font-weight:500; margin-top:1.5rem;
+  transition:background 0.2s;
+}
+.profile-contact-btn:hover { background:var(--verde-medio); }
+
+/* FORM MODAL */
+.form-modal {
+  background:var(--blanco);
+  border-radius:16px;
+  width:100%; max-width:520px;
+  max-height:90vh; overflow-y:auto;
+  padding:2rem;
+}
+.form-modal h2 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:1.5rem; }
+.form-group { margin-bottom:14px; }
+.form-group label { display:block; font-size:11px; font-weight:500; color:var(--gris); margin-bottom:5px; text-transform:uppercase; letter-spacing:0.06em; }
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; padding:9px 12px;
+  border:1px solid var(--borde); border-radius:6px;
+  font-size:13px; font-family:'DM Sans',sans-serif;
+  color:var(--negro); background:var(--fondo); outline:none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--verde); }
+.form-group textarea { resize:vertical; min-height:80px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.modal-actions { display:flex; gap:10px; margin-top:1.5rem; justify-content:flex-end; }
+.btn-cancel { padding:9px 20px; border:1px solid var(--borde); border-radius:6px; background:transparent; font-size:13px; font-family:'DM Sans',sans-serif; cursor:pointer; color:var(--gris); }
+.btn-save { padding:9px 20px; border:none; border-radius:6px; background:var(--verde); color:var(--blanco); font-size:13px; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500; }
+
+/* ==================== CONTACTO ==================== */
+#page-contacto { background:var(--fondo); }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; max-width:900px; }
+.contact-info-title { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; line-height:1.2; margin-bottom:1rem; }
+.contact-info-title em { color:var(--verde); font-style:italic; }
+.contact-info-desc { font-size:14px; color:var(--gris); line-height:1.7; margin-bottom:2rem; }
+.contact-item { display:flex; gap:12px; margin-bottom:1.25rem; }
+.contact-item-icon { width:36px; height:36px; border-radius:8px; background:var(--verde-claro); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+.contact-item-label { font-size:11px; color:var(--gris); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:2px; }
+.contact-item-val { font-size:14px; color:var(--negro); font-weight:500; }
+.contact-form { background:var(--blanco); border-radius:14px; padding:2rem; border:1px solid var(--borde); }
+.contact-form h3 { font-family:'Playfair Display',serif; font-size:20px; margin-bottom:1.5rem; }
+
+/* EMPTY */
+.empty { text-align:center; padding:5rem 2rem; color:var(--gris); grid-column:1/-1; }
+.empty-icon { font-family:'Playfair Display',serif; font-size:48px; color:var(--verde-claro); margin-bottom:1rem; }
+.empty p { font-size:14px; }
+
+@media(max-width:700px) {
+  .contact-grid { grid-template-columns:1fr; gap:2rem; }
+  .list-row { grid-template-columns:36px 1fr 80px 70px; }
+  .list-row > *:nth-child(n+6) { display:none; }
+  .hero-stats { gap:1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="mostrarPagina('landing')">Con<span>Gracia</span></div>
+  <div class="nav-links">
+    <button class="nav-link nav-link-inicio" onclick="mostrarPagina('landing')">Inicio</button>
+    <button class="nav-link" onclick="mostrarPagina('directorio')">Directorio</button>
+    <button class="nav-link" onclick="mostrarPagina('contacto')">Contacto</button>
+    <button class="nav-cta admin-only" onclick="abrirFormulario()">+ Añadir artista</button>
+  </div>
+</nav>
+
+<!-- ==================== LANDING ==================== -->
+<div id="page-landing" class="page active">
+  <div class="hero-full">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <span class="hero-badge">España & Latinoamérica</span>
+    <h1 class="hero-title">Talento que<br><em>enamora.</em></h1>
+    <p class="hero-desc">ConGracia es el directorio de referencia para descubrir talento hispanohablante emergente en música, influencers, modelos, arte visual y entretenimiento.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="mostrarPagina('directorio')">Ver el directorio</button>
+      <button class="btn-secondary" onclick="mostrarPagina('contacto')">Quiero contratar talento</button>
+    </div>
+    <div class="hero-stats">
+      <div><span class="hero-stat-num" id="landing-total">0</span><span class="hero-stat-label">Artistas</span></div>
+      <div><span class="hero-stat-num" id="landing-paises">0</span><span class="hero-stat-label">Países</span></div>
+      <div><span class="hero-stat-num" id="landing-cats">5</span><span class="hero-stat-label">Categorías</span></div>
+    </div>
+  </div>
+
+  <div class="section section-dark">
+    <span class="section-label">Cómo funciona</span>
+    <h2 class="section-title section-title-white">Simple para todos.<br><em style="font-style:italic;color:var(--verde-medio)">Potente para el talento.</em></h2>
+    <p class="section-sub">Conectamos artistas emergentes con marcas, agentes, salas, venues y particulares de toda España y Latinoamérica.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <div class="how-title">El artista entra al directorio</div>
+        <div class="how-desc">Perfil completo con métricas reales, bio y enlaces a sus plataformas.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <div class="how-title">Las marcas descubren talento</div>
+        <div class="how-desc">Filtran por categoría, país o engagement y encuentran exactamente lo que buscan.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <div class="how-title">ConGracia facilita la conexión</div>
+        <div class="how-desc">Gestionamos el primer contacto y acompañamos la negociación.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">04</div>
+        <div class="how-title">El talento crece</div>
+        <div class="how-desc">Colaboraciones reales, visibilidad real, ingresos reales.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <span class="section-label">Categorías</span>
+    <h2 class="section-title">Todo el talento,<br>en un solo lugar.</h2>
+    <p class="section-sub">Cinco categorías que cubren el ecosistema creativo hispanohablante al completo.</p>
+    <div class="cat-grid">
+      <div id="cats-grid-landing"></div>
+    </div>
+  </div>
+
+  <div class="section section-white" style="text-align:center;">
+    <span class="section-label">¿Buscas talento?</span>
+    <h2 class="section-title" style="margin-bottom:1rem;">Encuentra tu próxima<br><em style="font-style:italic;color:var(--verde)">colaboración perfecta.</em></h2>
+    <p class="section-sub" style="margin:0 auto 2rem;">Accede al directorio completo o escríbenos. Te ayudamos a encontrar el perfil exacto que necesitas para tu proyecto, evento o marca.</p>
+    <button class="btn-primary" onclick="mostrarPagina('contacto')">Hablar ConGracia</button>
+  </div>
+</div>
+
+<!-- ==================== DIRECTORIO ==================== -->
+<div id="page-directorio" class="page">
+  <div class="dir-hero">
+    <h1>Directorio de <em>Talento</em></h1>
+    <p>España & Latinoamérica · Selección ConGracia</p>
+    <div class="dir-stats">
+      <div><span class="dir-stat-num" id="dir-total">0</span><span class="dir-stat-label">Artistas</span></div>
+      <div><span class="dir-stat-num" id="dir-paises">0</span><span class="dir-stat-label">Países</span></div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <button class="filter-btn active" onclick="filtrar('todos',this)">Todos</button>
+    <span id="filtros-categorias"></span>
+    <div class="toolbar-right">
+      <input class="search-input" type="text" placeholder="Buscar..." oninput="buscar(this.value)">
+      <button class="view-btn active" id="btn-grid" onclick="setVista('grid')">⊞</button>
+      <button class="view-btn" id="btn-list" onclick="setVista('list')">☰</button>
+      <button class="btn-add-sm admin-only" onclick="abrirFormulario()">+ Añadir</button>
+    </div>
+  </div>
+  <div class="grid-view" id="grid-view"></div>
+  <div class="list-view hidden" id="list-view"></div>
+</div>
+
+<!-- ==================== CONTACTO ==================== -->
+<div id="page-contacto" class="page">
+  <div class="section section-light">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label">Contacto</span>
+        <h2 class="contact-info-title">¿Hablamos sobre<br><em>tu próxima colaboración?</em></h2>
+        <p class="contact-info-desc">Si representas una marca, organizas eventos, buscas talento para un proyecto personal o quieres acceder al directorio completo, escríbenos.</p>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2babdbeb392b1bdbcb5a0b3b1bbb3fcb7a1">[email&#160;protected]</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div><div class="contact-item-label">Instagram</div><div class="contact-item-val">@congracia.agency</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌍</div>
+          <div><div class="contact-item-label">Mercados</div><div class="contact-item-val">España · México · Argentina · Colombia</div></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Envíanos un mensaje</h3>
+        <form action="https://formspree.io/f/xaqlarzj" method="POST" id="fs-form">
+        <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre o empresa" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+        <div class="form-group">
+          <label>Soy...</label>
+          <select name="tipo">
+            <option>Una marca buscando talento</option>
+            <option>Un agente o promotor</option>
+            <option>Una sala o venue</option>
+            <option>Un particular con un evento</option>
+            <option>Un artista interesado</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos qué necesitas..." required></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;padding:12px;" id="fs-btn" onclick="enviarContacto(event)">Enviar mensaje</button>
+        <p id="fs-ok" style="display:none;color:#1D9E75;text-align:center;margin-top:12px;font-size:14px;">¡Mensaje enviado! Te contactamos pronto.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERFIL MODAL -->
+<div class="overlay" id="overlay-perfil" onclick="cerrarPerfil(event)">
+  <div class="profile-modal" id="profile-modal">
+    <div class="profile-header">
+      <button class="profile-close" onclick="cerrarOverlay('overlay-perfil')">✕</button>
+      <div class="profile-avatar-lg" id="pm-avatar"></div>
+      <div style="padding:1.25rem 2rem 1.5rem;background:var(--negro);">
+        <div class="profile-name" id="pm-nombre"></div>
+        <div class="profile-meta" id="pm-meta"></div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div id="pm-gallery"></div>
+      <div class="profile-section-title">Sobre el artista</div>
+      <div class="profile-bio" id="pm-bio"></div>
+      <div class="profile-section-title">Métricas</div>
+      <div class="profile-stats-grid" id="pm-stats"></div>
+      <div class="profile-section-title" id="pm-links-title">Redes</div>
+      <div class="profile-links" id="pm-links"></div>
+      <button class="profile-contact-btn" onclick="mostrarPagina('contacto');cerrarOverlay('overlay-perfil')">Contactar a través de ConGracia</button>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA ARTISTA -->
+<div class="page" id="page-artista">
+  <div id="artista-hero" style="width:100%;height:520px;background:var(--negro);background-size:cover;background-position:center center;position:relative;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,transparent 35%,rgba(26,26,24,0.97) 100%);"></div>
+    <button onclick="irAtras()" style="position:absolute;top:1.5rem;left:1.5rem;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);color:white;padding:8px 18px;border-radius:20px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;z-index:2;">← Volver</button>
+    <div style="position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;z-index:2;">
+      <div id="artista-nombre" style="font-family:'Playfair Display',serif;font-size:52px;color:white;margin-bottom:10px;line-height:1.05;text-shadow:0 2px 24px rgba(0,0,0,0.5);"></div>
+      <div id="artista-meta" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;"></div>
+    </div>
+  </div>
+  <!-- Galería de fotos -->
+  <div style="max-width:960px;margin:0 auto;padding:2rem 1.5rem 0;">
+    <div id="artista-galeria-main" class="artista-gallery-grid"></div>
+  </div>
+  <div style="max-width:960px;margin:0 auto;padding:2rem 1.5rem 3rem;">
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:3rem;" id="artista-content-grid">
+      <div>
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.12em;color:var(--gris);margin-bottom:1rem;text-transform:uppercase;">Sobre el artista</div>
+        <div id="artista-bio" style="font-size:16px;line-height:1.85;color:#3a3a38;"></div>
+      </div>
+      <div>
+        <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:1.5rem;margin-bottom:1rem;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;color:var(--gris);margin-bottom:1rem;text-transform:uppercase;">Métricas</div>
+          <div id="artista-stats" style="display:flex;flex-direction:column;gap:4px;"></div>
+        </div>
+        <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:1.5rem;margin-bottom:1rem;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;color:var(--gris);margin-bottom:1rem;text-transform:uppercase;">Redes</div>
+          <div id="artista-links" style="display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+        <button onclick="mostrarPagina('contacto')" style="width:100%;background:var(--verde);color:white;border:none;padding:15px;border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--verde-medio)'" onmouseout="this.style.background='var(--verde)'">Contactar a través de ConGracia</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="if(event.target===this)cerrarLightbox()">
+  <button id="lightbox-close" onclick="cerrarLightbox()">✕</button>
+  <button id="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button id="lightbox-next" onclick="lightboxNav(1)">›</button>
+</div>
+
+<!-- FORM MODAL -->
+<div class="overlay" id="overlay-form" onclick="cerrarFormulario(event)">
+  <div class="form-modal">
+    <h2>Añadir artista</h2>
+    <div class="form-row">
+      <div class="form-group"><label>Nombre artístico</label><input type="text" id="f-nombre" placeholder="Ej: María Sánchez"></div>
+      <div class="form-group"><label>Categoría</label>
+        <select id="f-categoria"><option>Música</option><option>Influencer</option><option>Modelo</option><option>Arte Visual</option><option>Entretenimiento</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>País</label><input type="text" id="f-pais" placeholder="Ej: España"></div>
+      <div class="form-group"><label>Tarifa orientativa</label><input type="text" id="f-tarifa" placeholder="Ej: 300–800€"></div>
+    </div>
+    <div class="form-group">
+      <label>📸 Fotos del artista <span style="font-weight:400;color:var(--gris)">(hasta 6 · la primera es la principal)</span></label>
+      <div class="fotos-upload-grid" id="f-fotos-grid"></div>
+      <input type="file" id="f-foto-file-input" accept="image/*" style="display:none" onchange="handleFotoSlot(this,'f')">
+      <div class="upload-status" id="f-fotos-status"></div>
+    </div>
+    <div class="form-group"><label>Bio corta</label><textarea id="f-bio" placeholder="3-4 líneas describiendo al artista..."></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label>📱 Instagram</label><input type="text" id="f-ig" placeholder="@usuario">
+        <div class="checkbox-row"><input type="checkbox" id="f-ig-show" checked><label for="f-ig-show">Mostrar</label></div>
+      </div>
+      <div class="form-group"><label>TikTok</label><input type="text" id="f-tiktok" placeholder="@usuario">
+        <div class="checkbox-row"><input type="checkbox" id="f-tiktok-show"><label for="f-tiktok-show">Mostrar</label></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>🎵 Spotify (oyentes/mes)</label><input type="text" id="f-spotify" placeholder="Ej: 1.2K">
+        <div class="checkbox-row"><input type="checkbox" id="f-spotify-show" checked><label for="f-spotify-show">Mostrar</label></div>
+      </div>
+      <div class="form-group"><label>▶️ YouTube (suscriptores)</label><input type="text" id="f-youtube" placeholder="Ej: 352">
+        <div class="checkbox-row"><input type="checkbox" id="f-youtube-show" checked><label for="f-youtube-show">Mostrar</label></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>🔗 URL Spotify</label><input type="text" id="f-spotify-url" placeholder="https://open.spotify.com/..."></div>
+      <div class="form-group"><label>🔗 URL YouTube</label><input type="text" id="f-youtube-url" placeholder="https://youtube.com/..."></div>
+    </div>
+    <div class="form-group"><label>Engagement rate</label><input type="text" id="f-engagement" placeholder="Ej: 4.2%"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="cerrarOverlay('overlay-form')">Cancelar</button>
+      <button class="btn-save" onclick="guardarArtista()">Guardar artista</button>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+let artistas = [];
+let filtroActivo = 'todos';
+let busquedaActiva = '';
+let vistaActiva = 'grid';
+let categoriasActivas = ["Música","Influencer","Modelo","Arte Visual","Entretenimiento"];
+
+async function cargarConfig() {
+  const {data, error} = await sb.from('config').select('valor').eq('clave','categorias_activas').single();
+  if(!error && data) {
+    try { categoriasActivas = JSON.parse(data.valor); } catch(e) {}
+  }
+  await cargarArtistas();
+}
+
+// rutaInicial se llama desde cargarConfig().then(rutaInicial) al inicio
+
+const iniciales = n => n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const toSlug = n => n.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+function mostrarPagina(id, pushState=true) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='directorio') renderizar();
+  if(id==='landing') actualizarLanding();
+  if(pushState) {
+    const url = id === 'landing' ? '/' : id === 'directorio' ? '/directorio' : id === 'contacto' ? '/contacto' : window.location.pathname;
+    history.pushState({page:id}, '', url);
+  }
+}
+
+// ===== LIGHTBOX =====
+let lbFotos = [];
+let lbIdx = 0;
+function abrirLightbox(fotos, idx) {
+  lbFotos = fotos; lbIdx = idx;
+  document.getElementById('lightbox-img').src = fotos[idx];
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lightboxNav(dir) {
+  lbIdx = (lbIdx + dir + lbFotos.length) % lbFotos.length;
+  document.getElementById('lightbox-img').src = lbFotos[lbIdx];
+}
+document.addEventListener('keydown', function(e) {
+  const lb = document.getElementById('lightbox');
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'Escape') cerrarLightbox();
+  if(e.key === 'ArrowLeft') lightboxNav(-1);
+  if(e.key === 'ArrowRight') lightboxNav(1);
+});
+
+// ===== GALERÍA ARTISTA =====
+function renderGaleriaArtista(fotos) {
+  const gal = document.getElementById('artista-galeria-main');
+  if(!fotos || fotos.length === 0) { gal.innerHTML = ''; gal.className = 'artista-gallery-grid'; return; }
+  const n = Math.min(fotos.length, 6);
+  gal.className = 'artista-gallery-grid n' + n;
+  gal.innerHTML = '';
+  fotos.slice(0, n).forEach(function(url, i) {
+    const div = document.createElement('div');
+    div.className = 'gal-item';
+    div.onclick = (function(idx){ return function(){ abrirLightbox(fotos, idx); }; })(i);
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = '';
+    div.appendChild(img);
+    gal.appendChild(div);
+  });
+}
+
+// ===== SISTEMA FOTOS DINÁMICAS EN FORMULARIO =====
+let fFotos = []; // fotos para form añadir
+let eFotos = []; // fotos para form editar
+
+function renderFotosGrid(prefix) {
+  const fotos = prefix === 'f' ? fFotos : eFotos;
+  const grid = document.getElementById(prefix + '-fotos-grid');
+  grid.innerHTML = '';
+  fotos.forEach(function(url, i) {
+    const slot = document.createElement('div');
+    slot.className = 'foto-upload-slot has-foto';
+    const img = document.createElement('img');
+    img.src = url;
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'slot-remove';
+    removeBtn.textContent = '✕';
+    removeBtn.onclick = (function(idx, p){ return function(e){ e.stopPropagation(); (p==='f'?fFotos:eFotos).splice(idx,1); renderFotosGrid(p); }; })(i, prefix);
+    slot.appendChild(img);
+    slot.appendChild(removeBtn);
+    grid.appendChild(slot);
+  });
+  if(fotos.length < 6) {
+    const add = document.createElement('div');
+    add.className = 'foto-slot-add';
+    add.innerHTML = '<span style="font-size:20px">+</span><span>Añadir foto</span>';
+    add.onclick = function() { document.getElementById(prefix+'-foto-file-input').click(); };
+    grid.appendChild(add);
+  }
+}
+
+async function handleFotoSlot(input, prefix) {
+  const file = input.files[0];
+  if(!file) return;
+  const fotos = prefix === 'f' ? fFotos : eFotos;
+  if(fotos.length >= 6) return;
+  const statusEl = document.getElementById(prefix + '-fotos-status');
+  statusEl.textContent = 'Subiendo...';
+  const ext = file.name.split('.').pop();
+  const path = 'fotos/' + Date.now() + '-' + Math.random().toString(36).slice(2) + '.' + ext;
+  const {data, error} = await sb.storage.from('artistas').upload(path, file, {upsert:true});
+  if(error) { statusEl.textContent = 'Error: ' + error.message; return; }
+  const {data: urlData} = sb.storage.from('artistas').getPublicUrl(path);
+  fotos.push(urlData.publicUrl);
+  renderFotosGrid(prefix);
+  statusEl.textContent = '✓ Foto añadida';
+  setTimeout(function(){ statusEl.textContent=''; }, 2000);
+  input.value = '';
+}
+
+function irAtras() {
+  if(history.length > 1) history.back();
+  else mostrarPagina('directorio');
+}
+
+function abrirPaginaArtista(idx, pushState=true) {
+  const a = artistas[idx];
+  const slug = toSlug(a.nombre);
+  // Hero — usamos la primera foto de fotos[] o foto legado
+  const hero = document.getElementById('artista-hero');
+  const todasFotos = getFotosArtista(a);
+  hero.style.backgroundImage = todasFotos.length ? 'url('+todasFotos[0]+')' : '';
+  // Nombre y meta
+  document.getElementById('artista-nombre').textContent = a.nombre;
+  const meta = document.getElementById('artista-meta');
+  meta.innerHTML = '<span class="card-badge badge-'+a.categoria+'" style="margin-right:8px">'+a.categoria+'</span><span style="font-size:14px;color:rgba(255,255,255,0.75)">'+( a.pais||'')+'</span>';
+  // Bio
+  document.getElementById('artista-bio').textContent = a.bio || '';
+  // Galería — fotos secundarias (sin la primera)
+  renderGaleriaArtista(todasFotos.slice(1));
+  // Stats
+  const stats = document.getElementById('artista-stats');
+  stats.innerHTML = '';
+  if(a.spotify && a.spotifyShow) {
+    stats.innerHTML += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borde);font-size:14px;"><span style="color:var(--gris)">🎵 Spotify oyentes</span><span style="font-weight:500">'+a.spotify+'</span></div>';
+  }
+  if(a.youtube && a.youtubeShow) {
+    stats.innerHTML += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borde);font-size:14px;"><span style="color:var(--gris)">▶️ YouTube subs</span><span style="font-weight:500">'+a.youtube+'</span></div>';
+  }
+  if(a.engagement) {
+    stats.innerHTML += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borde);font-size:14px;"><span style="color:var(--gris)">📊 Engagement</span><span style="font-weight:500">'+a.engagement+'</span></div>';
+  }
+  if(a.tarifa) {
+    stats.innerHTML += '<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px;"><span style="color:var(--gris)">💶 Tarifa</span><span style="font-weight:500">'+a.tarifa+'</span></div>';
+  }
+  if(!stats.innerHTML) stats.innerHTML = '<span style="font-size:13px;color:var(--gris)">A consultar</span>';
+  // Links
+  const links = document.getElementById('artista-links');
+  links.innerHTML = '';
+  if(a.ig && a.igShow) {
+    links.innerHTML += '<a class="profile-link" href="https://instagram.com/'+a.ig.replace('@','')+'" target="_blank">📱 Instagram '+a.ig+'</a>';
+  }
+  if(a.spotifyUrl) {
+    links.innerHTML += '<a class="profile-link" href="'+a.spotifyUrl+'" target="_blank">🎵 Spotify</a>';
+  }
+  if(a.youtubeUrl) {
+    links.innerHTML += '<a class="profile-link" href="'+a.youtubeUrl+'" target="_blank">▶️ YouTube</a>';
+  }
+  if(a.tiktok && a.tiktokShow) {
+    links.innerHTML += '<a class="profile-link" href="#">TikTok '+a.tiktok+'</a>';
+  }
+  if(!links.innerHTML) links.innerHTML = '<span style="font-size:13px;color:var(--gris)">Sin redes añadidas.</span>';
+  // Mostrar página y URL
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-artista').classList.add('active');
+  window.scrollTo(0,0);
+  if(pushState) history.pushState({page:'artista', slug:slug, idx:idx}, '', '/artistas/'+slug);
+}
+
+// Obtiene array de fotos de un artista (combina campo fotos[] con legado foto/foto2/foto3)
+function getFotosArtista(a) {
+  if(a.fotos && a.fotos.length) return a.fotos;
+  return [a.foto, a.foto2, a.foto3].filter(Boolean);
+}
+
+function irCategoria(cat) {
+  filtroActivo = cat;
+  mostrarPagina('directorio');
+  setTimeout(()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(b=>{ if(b.textContent.includes(cat)||b.onclick?.toString().includes(cat)) b.classList.add('active'); });
+    renderizar();
+  },50);
+}
+
+function setVista(v) {
+  vistaActiva = v;
+  document.getElementById('btn-grid').classList.toggle('active', v==='grid');
+  document.getElementById('btn-list').classList.toggle('active', v==='list');
+  document.getElementById('grid-view').classList.toggle('hidden', v!=='grid');
+  document.getElementById('list-view').classList.toggle('hidden', v!=='list');
+  renderizar();
+}
+
+function getLista() {
+  return artistas.filter(a => {
+    const mF = filtroActivo==='todos' || a.categoria===filtroActivo;
+    const mB = a.nombre.toLowerCase().includes(busquedaActiva.toLowerCase());
+    return mF && mB;
+  });
+}
+
+function renderizar() {
+  const lista = getLista();
+  // GRID
+  const gv = document.getElementById('grid-view');
+  if(!lista.length) {
+    gv.innerHTML = '<div class="empty"><div class="empty-icon">✦</div><p>Sin artistas todavía. ¡Añade el primero!</p></div>';
+  } else {
+    gv.innerHTML = lista.map((a,i)=>`
+      <div class="card" style="animation-delay:${i*0.04}s" onclick="abrirPaginaArtista(${artistas.indexOf(a)})">
+        <div class="card-avatar" style="${a.foto ? 'background-image:url(' + a.foto + ');background-size:cover;background-position:center;font-size:0;' : ''}">${a.foto ? '' : iniciales(a.nombre)}</div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="card-name">${a.nombre}</span>
+            <span class="card-badge badge-${a.categoria}">${a.categoria}</span>
+          </div>
+          <div class="card-country"><span class="status-dot"></span>${a.pais||'—'}</div>
+          <div class="card-bio">${a.bio||'Sin bio todavía.'}</div>
+          <div class="platform-row">
+            ${a.spotify && a.spotifyShow ? '<span class="platform-badge"><span>🎵</span>' + a.spotify + ' oyentes</span>' : ''}
+            ${a.youtube && a.youtubeShow ? '<span class="platform-badge"><span>▶️</span>' + a.youtube + ' subs</span>' : ''}
+            ${a.ig && a.igShow ? '<span class="platform-badge"><span>📱</span>' + a.ig + '</span>' : ''}
+            ${a.tiktok && a.tiktokShow ? '<span class="platform-badge"><span>🎵</span>' + a.tiktok + '</span>' : ''}
+            ${a.tarifa ? '<span class="platform-badge">💶 ' + a.tarifa + '</span>' : ''}
+          </div>
+        </div>
+        ${document.body.classList.contains('admin-mode') ? '<div style="display:flex;gap:8px;padding:10px 1.25rem;border-top:1px solid var(--borde);"><button onclick="event.stopPropagation();abrirEditar(' + artistas.indexOf(a) + ')" style="flex:1;padding:6px;font-size:12px;border:1px solid var(--borde);border-radius:6px;background:transparent;cursor:pointer;color:var(--gris);">Editar</button></div>' : ''}
+      </div>`).join('');
+  }
+  // LIST
+  const lv = document.getElementById('list-view');
+  if(!lista.length) {
+    lv.innerHTML = '<div class="empty"><div class="empty-icon">✦</div><p>Sin artistas todavía.</p></div>';
+  } else {
+    lv.innerHTML = `
+      <div class="list-row header">
+        <div></div>
+        <div class="list-header-cell">Artista</div>
+        <div class="list-header-cell">Categoría</div>
+        <div class="list-header-cell">País</div>
+        <div class="list-header-cell">Seguidores</div>
+        <div class="list-header-cell">Engagement</div>
+        <div class="list-header-cell">Tarifa</div>
+      </div>` +
+    lista.map(a=>`
+      <div class="list-row" onclick="abrirPaginaArtista(${artistas.indexOf(a)})">
+        <div class="list-avatar" style="${a.foto ? 'background-image:url(' + a.foto + ');background-size:cover;background-position:center;font-size:0;' : ''}">${a.foto ? '' : iniciales(a.nombre)}</div>
+        <div><div class="list-name">${a.nombre}</div><div class="list-country">${a.pais||''}</div></div>
+        <div><span class="card-badge badge-${a.categoria}">${a.categoria}</span></div>
+        <div class="list-cell">${a.pais||'—'}</div>
+        <div class="list-cell">${a.seguidores||'—'}</div>
+        <div class="list-cell">${a.engagement||'—'}</div>
+        <div class="list-cell">${a.tarifa||'—'}</div>
+      </div>`).join('');
+  }
+  actualizarStats();
+}
+
+function actualizarStats() {
+  const t = artistas.length;
+  const p = [...new Set(artistas.map(a=>a.pais).filter(Boolean))].length;
+  document.getElementById('dir-total').textContent = t;
+  document.getElementById('dir-paises').textContent = p;
+}
+
+const CAT_INFO = {
+  'Música': {icon:'🎵', label:'Música'},
+  'Influencer': {icon:'📱', label:'Influencers'},
+  'Modelo': {icon:'✦', label:'Modelos'},
+  'Arte Visual': {icon:'🎨', label:'Arte Visual'},
+  'Entretenimiento': {icon:'🎤', label:'Entretenimiento'}
+};
+
+function actualizarLanding() {
+  const t = artistas.length;
+  const p = [...new Set(artistas.map(a=>a.pais).filter(Boolean))].length;
+  document.getElementById('landing-total').textContent = t;
+  document.getElementById('landing-paises').textContent = p;
+  const catsEl = document.getElementById('landing-cats');
+  if(catsEl) catsEl.textContent = categoriasActivas.length;
+  // Categorías landing dinámicas
+  const catsGrid = document.getElementById('cats-grid-landing');
+  if(catsGrid) {
+    catsGrid.innerHTML = '';
+    categoriasActivas.forEach(function(c) {
+      const info = CAT_INFO[c] || {icon:'✦', label:c};
+      const count = artistas.filter(function(a){return a.categoria===c;}).length;
+      const div = document.createElement('div');
+      div.className = 'cat-card';
+      div.onclick = (function(cat){ return function(){ irCategoria(cat); }; })(c);
+      const icon = document.createElement('div'); icon.className = 'cat-icon'; icon.textContent = info.icon;
+      const name = document.createElement('div'); name.className = 'cat-name'; name.textContent = info.label;
+      const cnt = document.createElement('div'); cnt.className = 'cat-count'; cnt.textContent = count + ' artistas';
+      div.appendChild(icon); div.appendChild(name); div.appendChild(cnt);
+      catsGrid.appendChild(div);
+    });
+  }
+  // Filtros toolbar dinámicos
+  const filtrosEl = document.getElementById('filtros-categorias');
+  if(filtrosEl) {
+    filtrosEl.innerHTML = '';
+    categoriasActivas.forEach(function(c) {
+      const info = CAT_INFO[c] || {icon:'✦', label:c};
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.textContent = info.label;
+      btn.onclick = (function(cat, b){ return function(){ filtrar(cat, b); }; })(c, btn);
+      filtrosEl.appendChild(btn);
+    });
+  }
+}
+
+async function toggleCategoria(cat) {
+  const idx = categoriasActivas.indexOf(cat);
+  if(idx > -1) categoriasActivas.splice(idx, 1);
+  else categoriasActivas.push(cat);
+  await sb.from('config').upsert({clave:'categorias_activas', valor:JSON.stringify(categoriasActivas)});
+  renderCatAdmin();
+  actualizarLanding();
+  renderizar();
+}
+
+function renderCatAdmin() {
+  const el = document.getElementById('admin-cats-panel');
+  if(!el) return;
+  const todas = ['Música','Influencer','Modelo','Arte Visual','Entretenimiento'];
+  el.innerHTML = '';
+  todas.forEach(function(c) {
+    const activa = categoriasActivas.includes(c);
+    const label = document.createElement('label');
+    label.style.cssText = 'display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;padding:6px 0;border-bottom:1px solid var(--borde);';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = activa;
+    cb.style.cssText = 'width:16px;height:16px;';
+    cb.onchange = (function(cat){ return function(){ toggleCategoria(cat); }; })(c);
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(' ' + CAT_INFO[c].icon + ' ' + CAT_INFO[c].label));
+    el.appendChild(label);
+  });
+}
+
+function filtrar(cat, btn) {
+  filtroActivo = cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderizar();
+}
+
+function buscar(v) { busquedaActiva = v; renderizar(); }
+
+function abrirPerfil(idx) {
+  const a = artistas[idx];
+  const pmAvatar = document.getElementById('pm-avatar');
+  pmAvatar.textContent = a.foto ? '' : iniciales(a.nombre);
+  pmAvatar.style = a.foto ? 'background-image:url(' + a.foto + ');background-size:cover;background-position:center;font-size:0;' : '';
+  document.getElementById('pm-nombre').textContent = a.nombre;
+  document.getElementById('pm-meta').innerHTML = '<span class="card-badge badge-' + a.categoria + '" style="margin-right:8px">' + a.categoria + '</span><span style="font-size:13px;color:var(--gris)">' + (a.pais||'') + '</span>';
+  document.getElementById('pm-bio').textContent = a.bio || 'Sin bio disponible.';
+  const galeriaEl = document.getElementById('pm-gallery');
+  if(galeriaEl) {
+    const fotos = [a.foto2, a.foto3].filter(Boolean);
+    if(fotos.length) {
+      const div = document.createElement('div');
+      div.style.cssText = 'display:grid;grid-template-columns:repeat(' + fotos.length + ',1fr);gap:8px;margin-top:10px;';
+      fotos.forEach(function(furl) {
+        const img = document.createElement('img');
+        img.src = furl;
+        img.style.cssText = 'width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;';
+        div.appendChild(img);
+      });
+      galeriaEl.innerHTML = '';
+      galeriaEl.appendChild(div);
+    } else {
+      galeriaEl.innerHTML = '';
+    }
+  }
+  const statsHtml = [];
+  if(a.spotify && a.spotifyShow) statsHtml.push('<div class="profile-stat-card"><span class="profile-stat-num">' + a.spotify + '</span><span class="profile-stat-label">🎵 Spotify oyentes</span></div>');
+  if(a.youtube && a.youtubeShow) statsHtml.push('<div class="profile-stat-card"><span class="profile-stat-num">' + a.youtube + '</span><span class="profile-stat-label">▶️ YouTube subs</span></div>');
+  if(a.tarifa) statsHtml.push('<div class="profile-stat-card"><span class="profile-stat-num">' + a.tarifa + '</span><span class="profile-stat-label">💶 Tarifa</span></div>');
+  if(a.engagement) statsHtml.push('<div class="profile-stat-card"><span class="profile-stat-num">' + a.engagement + '</span><span class="profile-stat-label">Engagement</span></div>');
+  document.getElementById('pm-stats').innerHTML = statsHtml.join('') || '<p style="color:var(--gris);font-size:13px;">Sin métricas disponibles.</p>';
+  const links = [];
+  if(a.ig && a.igShow) links.push('<a class="profile-link" href="https://instagram.com/' + a.ig.replace('@','') + '" target="_blank">📱 Instagram ' + a.ig + '</a>');
+  if(a.tiktok && a.tiktokShow) links.push('<a class="profile-link" href="#">TikTok ' + a.tiktok + '</a>');
+  if(a.spotifyUrl) links.push('<a class="profile-link" href="' + a.spotifyUrl + '" target="_blank">🎵 Spotify</a>');
+  if(a.youtubeUrl) links.push('<a class="profile-link" href="' + a.youtubeUrl + '" target="_blank">▶️ YouTube</a>');
+  document.getElementById('pm-links').innerHTML = links.join('') || '<span style="font-size:13px;color:var(--gris)">Sin redes añadidas.</span>';
+  document.getElementById('pm-links-title').style.display = 'block';
+  document.getElementById('overlay-perfil').classList.add('open');
+}
+
+function cambiarFotoPerfil(url) {
+  const av = document.getElementById('pm-avatar');
+  av.style.backgroundImage = 'url(' + url + ')';
+  av.style.backgroundSize = 'cover';
+  av.style.backgroundPosition = 'center';
+  av.textContent = '';
+}
+
+function cerrarPerfil(e) { if(e.target===document.getElementById('overlay-perfil')) cerrarOverlay('overlay-perfil'); }
+function cerrarFormulario(e) { if(e.target===document.getElementById('overlay-form')) cerrarOverlay('overlay-form'); }
+function cerrarOverlay(id) { document.getElementById(id).classList.remove('open'); }
+function abrirFormulario() { document.getElementById('overlay-form').classList.add('open'); }
+
+async function guardarArtista() {
+  const nombre = document.getElementById('f-nombre').value.trim();
+  if(!nombre) { alert('El nombre es obligatorio.'); return; }
+  const nuevo = {
+    nombre,
+    categoria: document.getElementById('f-categoria').value,
+    pais: document.getElementById('f-pais').value,
+    bio: document.getElementById('f-bio').value,
+    foto: fFotos[0] || null,
+    foto2: fFotos[1] || null,
+    foto3: fFotos[2] || null,
+    fotos: fFotos.length ? fFotos : null,
+    spotify: document.getElementById('f-spotify').value,
+    spotify_show: document.getElementById('f-spotify-show').checked,
+    spotify_url: document.getElementById('f-spotify-url').value,
+    youtube: document.getElementById('f-youtube').value,
+    youtube_show: document.getElementById('f-youtube-show').checked,
+    youtube_url: document.getElementById('f-youtube-url').value,
+    ig: document.getElementById('f-ig').value,
+    ig_show: document.getElementById('f-ig-show').checked,
+    tiktok: document.getElementById('f-tiktok').value,
+    tiktok_show: document.getElementById('f-tiktok-show').checked,
+    engagement: document.getElementById('f-engagement').value,
+    tarifa: document.getElementById('f-tarifa').value,
+  };
+  nuevo.created_at = new Date().toISOString();
+  const {error} = await sb.from('artistas').insert([nuevo]);
+  if(error) { alert('Error al guardar: ' + error.message); return; }
+  fFotos = [];
+  cerrarOverlay('overlay-form');
+  document.querySelectorAll('#overlay-form input, #overlay-form textarea').forEach(el=>{ if(el.type==='checkbox') el.checked=false; else el.value=''; });
+  renderFotosGrid('f');
+  await cargarConfig();
+}
+
+async function handleUpload(input, hiddenId, statusId) {
+  const file = input.files[0];
+  if(!file) return;
+  const statusEl = document.getElementById(statusId);
+  statusEl.textContent = 'Subiendo...';
+  const ext = file.name.split('.').pop();
+  const path = 'fotos/' + Date.now() + '-' + Math.random().toString(36).slice(2) + '.' + ext;
+  const {data, error} = await sb.storage.from('artistas').upload(path, file, {upsert:true});
+  if(error) { statusEl.textContent = 'Error: ' + error.message; return; }
+  const {data: urlData} = sb.storage.from('artistas').getPublicUrl(path);
+  document.getElementById(hiddenId).value = urlData.publicUrl;
+  statusEl.textContent = '✓ ' + file.name;
+}
+
+async function cargarArtistas() {
+  const {data, error} = await sb.from('artistas').select('*').order('nombre', {ascending: true});
+  if(error) { console.error('Error cargando artistas:', error.message); return; }
+  artistas = (data || []).map(a => ({
+    id: a.id,
+    nombre: a.nombre,
+    categoria: a.categoria,
+    pais: a.pais,
+    bio: a.bio,
+    foto: a.foto,
+    foto2: a.foto2,
+    foto3: a.foto3,
+    fotos: Array.isArray(a.fotos) ? a.fotos : null,
+    spotify: a.spotify,
+    spotifyShow: a.spotify_show,
+    spotifyUrl: a.spotify_url,
+    youtube: a.youtube,
+    youtubeShow: a.youtube_show,
+    youtubeUrl: a.youtube_url,
+    ig: a.ig,
+    igShow: a.ig_show,
+    tiktok: a.tiktok,
+    tiktokShow: a.tiktok_show,
+    engagement: a.engagement,
+    tarifa: a.tarifa,
+  }));
+  renderizar();
+  actualizarLanding();
+}
+
+cargarConfig().then(rutaInicial);
+
+// Inicializar grids de fotos vacíos al cargar
+document.addEventListener('DOMContentLoaded', function() {
+  renderFotosGrid('f');
+  renderFotosGrid('e');
+});
+
+// Gestionar botón atrás/adelante
+window.addEventListener('popstate', function(e) {
+  if(e.state && e.state.page === 'artista' && e.state.idx !== undefined) {
+    abrirPaginaArtista(e.state.idx, false);
+  } else if(e.state && e.state.page) {
+    mostrarPagina(e.state.page, false);
+  } else {
+    mostrarPagina('landing', false);
+  }
+});
+
+function rutaInicial() {
+  const path = window.location.pathname;
+  if(path.startsWith('/artistas/')) {
+    const slug = path.replace('/artistas/','');
+    const idx = artistas.findIndex(function(a){ return toSlug(a.nombre) === slug; });
+    if(idx > -1) { abrirPaginaArtista(idx, false); return; }
+  }
+  if(path === '/directorio') { mostrarPagina('directorio', false); return; }
+  if(path === '/contacto') { mostrarPagina('contacto', false); return; }
+  mostrarPagina('landing', false);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const form = document.getElementById('contact-form');
+  if(form) {
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const btn = document.getElementById('contact-btn');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if(response.ok) {
+        form.reset();
+        btn.style.display = 'none';
+        document.getElementById('contact-ok').style.display = 'block';
+      } else {
+        btn.textContent = 'Error, inténtalo de nuevo';
+        btn.disabled = false;
+      }
+    });
+  }
+});
+
+</script>
+
+<div class="overlay" id="overlay-edit" onclick="cerrarEdit(event)">
+  <div class="form-modal">
+    <h2>Editar artista</h2>
+    <input type="hidden" id="e-idx">
+    <div class="form-row">
+      <div class="form-group"><label>Nombre artístico</label><input type="text" id="e-nombre" placeholder="Ej: María Sánchez"></div>
+      <div class="form-group"><label>Categoría</label>
+        <select id="e-categoria"><option>Música</option><option>Influencer</option><option>Modelo</option><option>Arte Visual</option><option>Entretenimiento</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>País</label><input type="text" id="e-pais" placeholder="Ej: España"></div>
+      <div class="form-group"><label>Tarifa orientativa</label><input type="text" id="e-tarifa" placeholder="Ej: 300–800€"></div>
+    </div>
+    <div class="form-group">
+      <label>📸 Fotos del artista <span style="font-weight:400;color:var(--gris)">(hasta 6 · la primera es la principal)</span></label>
+      <div class="fotos-upload-grid" id="e-fotos-grid"></div>
+      <input type="file" id="e-foto-file-input" accept="image/*" style="display:none" onchange="handleFotoSlot(this,'e')">
+      <div class="upload-status" id="e-fotos-status"></div>
+    </div>
+    <div class="form-group"><label>Bio corta</label><textarea id="e-bio" placeholder="3-4 líneas describiendo al artista..."></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label>🎵 Spotify (oyentes/mes)</label><input type="text" id="e-spotify" placeholder="Ej: 1.2K">
+        <div class="checkbox-row"><input type="checkbox" id="e-spotify-show"><label for="e-spotify-show">Mostrar</label></div>
+      </div>
+      <div class="form-group"><label>▶️ YouTube (suscriptores)</label><input type="text" id="e-youtube" placeholder="Ej: 352">
+        <div class="checkbox-row"><input type="checkbox" id="e-youtube-show"><label for="e-youtube-show">Mostrar</label></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>🔗 URL Spotify</label><input type="text" id="e-spotify-url" placeholder="https://open.spotify.com/..."></div>
+      <div class="form-group"><label>🔗 URL YouTube</label><input type="text" id="e-youtube-url" placeholder="https://youtube.com/..."></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>📱 Instagram</label><input type="text" id="e-ig" placeholder="@usuario">
+        <div class="checkbox-row"><input type="checkbox" id="e-ig-show"><label for="e-ig-show">Mostrar</label></div>
+      </div>
+      <div class="form-group"><label>TikTok</label><input type="text" id="e-tiktok" placeholder="@usuario">
+        <div class="checkbox-row"><input type="checkbox" id="e-tiktok-show"><label for="e-tiktok-show">Mostrar</label></div>
+      </div>
+    </div>
+    <div class="form-group"><label>Engagement rate</label><input type="text" id="e-engagement" placeholder="Ej: 4.2%"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" style="color:#E24B4A;border-color:#E24B4A;" onclick="eliminarArtista()">Eliminar</button>
+      <button class="btn-cancel" onclick="cerrarOverlay('overlay-edit')">Cancelar</button>
+      <button class="btn-save" onclick="guardarEdicion()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function abrirEditar(idx) {
+  const a = artistas[idx];
+  document.getElementById('e-idx').value = idx;
+  document.getElementById('e-nombre').value = a.nombre || '';
+  document.getElementById('e-categoria').value = a.categoria || 'Música';
+  document.getElementById('e-pais').value = a.pais || '';
+  document.getElementById('e-bio').value = a.bio || '';
+  document.getElementById('e-spotify').value = a.spotify || '';
+  document.getElementById('e-spotify-show').checked = a.spotifyShow !== false;
+  document.getElementById('e-spotify-url').value = a.spotifyUrl || '';
+  document.getElementById('e-youtube').value = a.youtube || '';
+  document.getElementById('e-youtube-show').checked = a.youtubeShow !== false;
+  document.getElementById('e-youtube-url').value = a.youtubeUrl || '';
+  document.getElementById('e-ig').value = a.ig || '';
+  document.getElementById('e-ig-show').checked = a.igShow !== false;
+  document.getElementById('e-tiktok').value = a.tiktok || '';
+  document.getElementById('e-tiktok-show').checked = a.tiktokShow === true;
+  document.getElementById('e-engagement').value = a.engagement || '';
+  document.getElementById('e-tarifa').value = a.tarifa || '';
+  // Fotos
+  eFotos = getFotosArtista(a).slice();
+  renderFotosGrid('e');
+  document.getElementById('overlay-edit').classList.add('open');
+}
+
+async function guardarEdicion() {
+  const idx = parseInt(document.getElementById('e-idx').value);
+  const id = artistas[idx].id;
+  const cambios = {
+    nombre: document.getElementById('e-nombre').value,
+    categoria: document.getElementById('e-categoria').value,
+    pais: document.getElementById('e-pais').value,
+    foto: eFotos[0] || null,
+    foto2: eFotos[1] || null,
+    foto3: eFotos[2] || null,
+    fotos: eFotos.length ? eFotos : null,
+    bio: document.getElementById('e-bio').value,
+    spotify: document.getElementById('e-spotify').value,
+    spotify_show: document.getElementById('e-spotify-show').checked,
+    spotify_url: document.getElementById('e-spotify-url').value,
+    youtube: document.getElementById('e-youtube').value,
+    youtube_show: document.getElementById('e-youtube-show').checked,
+    youtube_url: document.getElementById('e-youtube-url').value,
+    ig: document.getElementById('e-ig').value,
+    ig_show: document.getElementById('e-ig-show').checked,
+    tiktok: document.getElementById('e-tiktok').value,
+    tiktok_show: document.getElementById('e-tiktok-show').checked,
+    engagement: document.getElementById('e-engagement').value,
+    tarifa: document.getElementById('e-tarifa').value,
+  };
+  const {error} = await sb.from('artistas').update(cambios).eq('id', id);
+  if(error) { alert('Error al guardar: ' + error.message); return; }
+  eFotos = [];
+  cerrarOverlay('overlay-edit');
+  await cargarArtistas();
+}
+
+async function eliminarArtista() {
+  if(!confirm('¿Seguro que quieres eliminar este artista?')) return;
+  const idx = parseInt(document.getElementById('e-idx').value);
+  const id = artistas[idx].id;
+  const {error} = await sb.from('artistas').delete().eq('id', id);
+  if(error) { alert('Error al eliminar: ' + error.message); return; }
+  cerrarOverlay('overlay-edit');
+  await cargarArtistas();
+}
+
+function cerrarEdit(e) {
+  if(e.target === document.getElementById('overlay-edit')) cerrarOverlay('overlay-edit');
+}
+</script>
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('admin') === 'Nuevaera27') {
+    sessionStorage.setItem('cg_admin', '1');
+  }
+  if (sessionStorage.getItem('cg_admin') === '1') {
+    document.body.classList.add('admin-mode');
+    // Crear panel de categorías admin
+    const panel = document.createElement('div');
+    panel.id = 'admin-cats-panel-wrap';
+    panel.style.cssText = 'position:fixed;bottom:1rem;right:1rem;z-index:999;background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:1rem 1.25rem;min-width:200px;box-shadow:0 4px 20px rgba(0,0,0,0.12);';
+    panel.innerHTML = '<div style="font-size:11px;font-weight:500;color:var(--gris);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Categorías visibles</div><div id="admin-cats-panel"></div>';
+    document.body.appendChild(panel);
+    setTimeout(renderCatAdmin, 100);
+  }
+})();
+</script>
+</body>
+</html>
