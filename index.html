@@ -650,6 +650,7 @@ nav {
   <div class="nav-links">
     <button class="nav-link nav-link-inicio" onclick="mostrarPagina('landing')">Inicio</button>
     <button class="nav-link" onclick="mostrarPagina('directorio')">Directorio</button>
+    <button class="nav-link" onclick="mostrarPagina('marcas')">Para marcas</button>
     <button class="nav-link" onclick="mostrarPagina('contacto')">Contacto</button>
     <button class="nav-cta admin-only" onclick="abrirFormulario()">+ Añadir artista</button>
   </div>
@@ -716,6 +717,67 @@ nav {
     <h2 class="section-title" style="margin-bottom:1rem;">Encuentra tu próxima<br><em style="font-style:italic;color:var(--verde)">colaboración perfecta.</em></h2>
     <p class="section-sub" style="margin:0 auto 2rem;">Accede al directorio completo o escríbenos. Te ayudamos a encontrar el perfil exacto que necesitas para tu proyecto, evento o marca.</p>
     <button class="btn-primary" onclick="mostrarPagina('contacto')">Hablar ConGracia</button>
+  </div>
+</div>
+
+<!-- ==================== PARA MARCAS ==================== -->
+<div id="page-marcas" class="page">
+  <div style="background:var(--negro);padding:4rem 2.5rem 3rem;">
+    <span class="section-label">Para marcas y empresas</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);color:white;font-weight:400;line-height:1.1;margin-bottom:1rem;">Conectamos tu marca con<br><em style="color:var(--verde-medio);font-style:italic;">el talento adecuado.</em></h1>
+    <p style="font-size:16px;color:var(--gris);max-width:520px;line-height:1.7;margin-bottom:2rem;">En ConGracia seleccionamos y representamos talento hispanohablante emergente. Si buscas una colaboración auténtica con creadores de contenido, artistas o presentadores, estás en el sitio correcto.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="mostrarPagina('directorio')">Ver el directorio</button>
+      <button class="btn-secondary" onclick="mostrarPagina('contacto')">Hablar con ConGracia</button>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <span class="section-label">Qué ofrecemos</span>
+    <div class="how-grid" style="margin-top:1.5rem;">
+      <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:1.5rem;">
+        <div style="font-size:28px;margin-bottom:0.75rem;">📱</div>
+        <div style="font-size:15px;font-weight:500;color:var(--negro);margin-bottom:0.5rem;">Influencer marketing</div>
+        <div style="font-size:13px;color:var(--gris);line-height:1.6;">Colaboraciones con creadores de contenido para tu marca en Instagram y TikTok.</div>
+      </div>
+      <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:1.5rem;">
+        <div style="font-size:28px;margin-bottom:0.75rem;">🎬</div>
+        <div style="font-size:15px;font-weight:500;color:var(--negro);margin-bottom:0.5rem;">Contenido UGC</div>
+        <div style="font-size:13px;color:var(--gris);line-height:1.6;">Material creado por el artista para tus propios canales, sin publicación obligatoria.</div>
+      </div>
+      <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:1.5rem;">
+        <div style="font-size:28px;margin-bottom:0.75rem;">🎨</div>
+        <div style="font-size:15px;font-weight:500;color:var(--negro);margin-bottom:0.5rem;">Arte para espacios</div>
+        <div style="font-size:13px;color:var(--gris);line-height:1.6;">Exposición temporal de obra pictórica en hoteles, restaurantes y espacios de empresa.</div>
+      </div>
+      <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:1.5rem;">
+        <div style="font-size:28px;margin-bottom:0.75rem;">🎤</div>
+        <div style="font-size:15px;font-weight:500;color:var(--negro);margin-bottom:0.5rem;">Presentadores y MC</div>
+        <div style="font-size:13px;color:var(--gris);line-height:1.6;">Presentadores y animadores para eventos corporativos, festivales y celebraciones.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-white">
+    <span class="section-label">Cómo funciona</span>
+    <div style="display:grid;gap:2rem;max-width:600px;margin-top:1.5rem;">
+      <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+        <div style="min-width:36px;height:36px;border-radius:50%;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--verde);font-weight:500;">1</div>
+        <div><div style="font-size:15px;font-weight:500;margin-bottom:4px;">Nos contactas</div><div style="font-size:13px;color:var(--gris);line-height:1.6;">Cuéntanos qué tipo de colaboración buscas y el perfil que tienes en mente.</div></div>
+      </div>
+      <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+        <div style="min-width:36px;height:36px;border-radius:50%;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--verde);font-weight:500;">2</div>
+        <div><div style="font-size:15px;font-weight:500;margin-bottom:4px;">Te presentamos el talento adecuado</div><div style="font-size:13px;color:var(--gris);line-height:1.6;">Seleccionamos el perfil que mejor encaja con tu marca y te lo presentamos con toda la info.</div></div>
+      </div>
+      <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+        <div style="min-width:36px;height:36px;border-radius:50%;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--verde);font-weight:500;">3</div>
+        <div><div style="font-size:15px;font-weight:500;margin-bottom:4px;">Cerramos las condiciones</div><div style="font-size:13px;color:var(--gris);line-height:1.6;">Gestionamos todo el proceso para que solo tengas que preocuparte del resultado.</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:3rem;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="mostrarPagina('directorio')">Ver el directorio</button>
+      <button class="btn-secondary" style="color:var(--negro);border-color:rgba(0,0,0,0.2);" onclick="mostrarPagina('contacto')">Hablar con ConGracia</button>
+    </div>
   </div>
 </div>
 
@@ -932,7 +994,7 @@ function mostrarPagina(id, pushState=true) {
   if(id==='directorio') renderizar();
   if(id==='landing') actualizarLanding();
   if(pushState) {
-    const url = id === 'landing' ? '/' : id === 'directorio' ? '/directorio' : id === 'contacto' ? '/contacto' : window.location.pathname;
+    const url = id === 'landing' ? '/' : id === 'directorio' ? '/directorio' : id === 'contacto' ? '/contacto' : id === 'marcas' ? '/para-marcas' : window.location.pathname;
     history.pushState({page:id}, '', url);
   }
 }
@@ -1434,6 +1496,7 @@ function rutaInicial() {
   }
   if(path === '/directorio') { mostrarPagina('directorio', false); return; }
   if(path === '/contacto') { mostrarPagina('contacto', false); return; }
+  if(path === '/para-marcas') { mostrarPagina('marcas', false); return; }
   mostrarPagina('landing', false);
 }
 
